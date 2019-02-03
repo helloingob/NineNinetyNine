@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Appenders>
+        <Console name="console-log" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss.SSS} %level %msg%n" />
+        </Console>
+        <File name="log" fileName="logs/logs.log" append="true">
+            <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss.SSS} %level %msg%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="DEBUG">
+            <AppenderRef ref="console-log" />
+        </Root>
+        <Logger name="output" additivity="TRUE" level="ALL">
+            <AppenderRef ref="log" level="ALL" />
+        </Logger>
+    </Loggers>
+</Configuration>
